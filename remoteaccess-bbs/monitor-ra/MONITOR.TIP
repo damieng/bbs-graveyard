@@ -1,0 +1,15 @@
+You can log-off or send notes to just active nodes by selecting the BBS object instead of all the nodes.
+Double-clicking a user in the 'Calls' or 'New Users' property sheets will show the users account (Registered only).
+You can save the current window and toolbar layout by clicking on 'Save' in the View > Options screen.
+You can see how long unprocessed outbound EchoMail and NetMail has been waiting by placing the mouse pointer over the checkbox on the Node Properties sheet.
+You can delete a log file by using the right-mouse button or by pressing Delete in the log view (Registered only).
+By enabling system tray support in View > Options, Monitor/RA will display a 'Usage' indicator on the system tray.
+You can show the status of mail processing, maintenance and other batch-file events by using the included RASTATUS utility.
+That clicking on any column header will sort the list by that field in ascending order.  A second click will sort in descending order.
+You can print a log file by using the right-mouse button or by pressing Ctrl-P in the log view (Registered only).
+Monitor/RA can monitor up to 10 nodes in the non-commercial licence and up to 250 in the full commercial licence.
+Most of the text fields shown on property sheets in Monitor/RA can be copied to the clipboard using the right mouse button and choosing 'Copy'.
+By setting the 'Refresh interval' field to 0 in the View > Options dialog will prevent Monitor/RA from automatically refreshing the display while still allowing you to manually refresh the list when required.
+Resting the mouse pointer over a bar on the 'Usage' property sheet shows how many minutes in total have been used at that time of day over the shown period.
+You can reset the inbound and outbound mailer history in the 'Mailer' property sheet by using the right mouse button or by pressing Ctrl-R.
+You can have many node's property sheets open simulataneously.
