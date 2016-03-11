@@ -1,0 +1,9 @@
+descript.ion   4-DOS extended file information
+filedemo.c     Example of reading RemoteAccess file
+file_id.diz    RACDK archive description
+ra250c.h       RACDK RemoteAccess 'C' file structures
+racdk.doc      RACDK plain-ASCII documentation
+racdk.h        RACDK function library
+racdk.wri      RACDK Windows-Write format documentation
+test-crc.c     Example of using the CRC-32 routine
+whats.new      Whats new in this release of the RACDK

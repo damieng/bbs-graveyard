@@ -1,0 +1,18 @@
+Whats new in this release!
+==========================
+
+Fixes
+-----
+Enum's & structs in RA250C.H are now 'C' compiler friendly (not just C++)
+
+New!
+----
+All new documentation in ASCII and Windows Write formats.
+New CRC-32 and TimeSlicing routines.
+Some examples & much more detailed information.
+
+
+And still royalty-free, freeware, free free free free free!
+
+[)amien
+Damien Guard, Envy Technologies - 29th April, 1996.
