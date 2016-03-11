@@ -1,0 +1,16 @@
+CoolChat Amendment log
+======================
+
+0.1     Black Ice Alpha release
+        Bug fix:  Prevent ASCII below 32
+                  Prevent @ colour changes.
+        Enhance:  Add seconds to the time display.
+                  Add pop up menu to ESCape key.
+                  Add BBS "Whos online" processing.
+        Change:   Start from end of file on entry (ensure not pages to
+                  scroll back to and so that people cannot just jump in and
+                  see whats been written).
+                  Remove COOLCHAT.IDX on exit (will only succeed when free).
+        Optimize: Changed some od_printf functions to od_disp_str.
+
+0.2     New internal release
