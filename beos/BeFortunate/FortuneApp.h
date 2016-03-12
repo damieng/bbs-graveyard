@@ -3,9 +3,9 @@
 
 #include <Application.h>
 
-class FortuneApp: public BApplication
-{
-	public:		FortuneApp();
-				~FortuneApp();
+class FortuneApp: public BApplication {
+  public:
+    FortuneApp();
+    ~FortuneApp();
 };
 #endif

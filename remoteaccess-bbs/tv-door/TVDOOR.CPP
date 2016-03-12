@@ -23,11 +23,11 @@ void ontvcheck(void);
 void listbox(void);
 
 struct datarec {
-   char channel[9];
-   char start[5];
-   char rstart[5];
-   char programme[46];
-   };
+    char channel[9];
+    char start[5];
+    char rstart[5];
+    char programme[46];
+};
 
 struct time timenow;
 struct date datenow;
@@ -38,8 +38,7 @@ int listcnt;
 
 ifstream datafile;
 //---------------------------------------------------------------------------
-int main(int argc,char *argv[])
-{
+int main(int argc,char *argv[]) {
     strcpy(od_registered_to,"Damien Guard");
     od_registration_key = 2070937600L;
     initialise(argc,argv);
@@ -50,8 +49,7 @@ int main(int argc,char *argv[])
     return(0);
 }
 //---------------------------------------------------------------------------
-void initialise(int argc,char *argv[])
-{
+void initialise(int argc,char *argv[]) {
     char *daybuff;
     daybuff = new char[80];
 
@@ -63,10 +61,9 @@ void initialise(int argc,char *argv[])
 
     listcnt=0;
 
-    if (argc == 1)
-    {
-      cerr << "TV-DOOR usage: TVDOOR drop-path\n\n";
-      od_exit(1,FALSE);
+    if (argc == 1) {
+        cerr << "TV-DOOR usage: TVDOOR drop-path\n\n";
+        od_exit(1,FALSE);
     }
 
     od_control.od_config_filename = "TVDOOR.CFG";
@@ -82,19 +79,17 @@ void initialise(int argc,char *argv[])
 
     itoa(datenow.da_year,strdate,10);
     itoa(datenow.da_mon,tempbuf,10);
-    if (tempbuf[1] == '\0')
-       {
-	tempbuf[1] = tempbuf[0];
-	tempbuf[0] = '0';
-       }
+    if (tempbuf[1] == '\0') {
+        tempbuf[1] = tempbuf[0];
+        tempbuf[0] = '0';
+    }
     strdate[4] = tempbuf[0];
     strdate[5] = tempbuf[1];
     itoa(datenow.da_day,tempbuf,10);
-    if (tempbuf[1] == '\0')
-       {
-	tempbuf[1] = tempbuf[0];
-	tempbuf[0] = '0';
-       }
+    if (tempbuf[1] == '\0') {
+        tempbuf[1] = tempbuf[0];
+        tempbuf[0] = '0';
+    }
 
     strdate[6] = tempbuf[0];
     strdate[7] = tempbuf[1];
@@ -105,11 +100,10 @@ void initialise(int argc,char *argv[])
     strdate[12] = '\0';
 
     datafile.open(strdate);
-    if (!datafile)
-       {
-	cout << "TV-Door error: Datafile could not be opened\n\r";
-	od_exit(1,FALSE);
-       }
+    if (!datafile) {
+        cout << "TV-Door error: Datafile could not be opened\n\r";
+        od_exit(1,FALSE);
+    }
 
     datafile.get(daybuff,80,'\n');
     datafile.get();
@@ -117,8 +111,7 @@ void initialise(int argc,char *argv[])
     // do file checking here.
 }
 //---------------------------------------------------------------------------
-void process(void)
-{
+void process(void) {
     od_clr_scr();
     od_send_file("TVHEAD");
     od_printf("\n\r");
@@ -126,27 +119,24 @@ void process(void)
     readline();
     first = second;
 
-    while (!datafile.eof())
-    {
-	 readline();
-	 ontvcheck();
-	 first = second;
+    while (!datafile.eof()) {
+        readline();
+        ontvcheck();
+        first = second;
     };
 
     while(od_get_key(TRUE)!=13);
 }
 //---------------------------------------------------------------------------
-void readline(void)
-{
+void readline(void) {
     char *daybuff;
     daybuff = new char[80];
 
     datafile.get(daybuff,80,'\n');
     datafile.get();
-    if (datafile.eof())
-       {
-	strcpy(daybuff,"*END*   9999   Test");
-       }
+    if (datafile.eof()) {
+        strcpy(daybuff,"*END*   9999   Test");
+    }
 
     strncpy(second.channel,daybuff,8);
     strncpy(second.start,daybuff+8,4);
@@ -160,8 +150,7 @@ void readline(void)
     second.programme[45] = '\0';
 }
 //---------------------------------------------------------------------------
-void ontvcheck(void)
-{
+void ontvcheck(void) {
     unsigned char shour,smin,ehour,emin;
 
     shour = (first.start[0] - 48)  * 10 + (first.start[1] - 48);
@@ -169,17 +158,16 @@ void ontvcheck(void)
     ehour = (second.start[0] - 48) * 10 + (second.start[1] - 48);
     emin  = (second.start[2] - 48) * 10 + (second.start[3] - 48);
 
-    if (!(strcmp(first.channel,second.channel)))
-       {
-	if (timenow.ti_hour > ehour)    return;
-	if (timenow.ti_hour == ehour)
-	   if (timenow.ti_min == emin || timenow.ti_min > emin) return;
-       }
+    if (!(strcmp(first.channel,second.channel))) {
+        if (timenow.ti_hour > ehour)    return;
+        if (timenow.ti_hour == ehour)
+            if (timenow.ti_min == emin || timenow.ti_min > emin) return;
+    }
 
     if (first.programme[0] == '*')  return;
     if (timenow.ti_hour < shour)    return;
     if (timenow.ti_hour == shour)
-       if (timenow.ti_min < smin) return;
+        if (timenow.ti_min < smin) return;
 
 
     if (!(strncmp(first.start,"0000",4))) strncpy(first.start,first.rstart,4);
@@ -189,15 +177,13 @@ void ontvcheck(void)
 
 }
 //---------------------------------------------------------------------------
-void listbox(void)
-{
+void listbox(void) {
     listidx=0;
-    while(od_get_key(FALSE)!=13){
-	showbox(listidx);
+    while(od_get_key(FALSE)!=13) {
+        showbox(listidx);
     };
 }
 //---------------------------------------------------------------------------
-void closedown(void)
-{
+void closedown(void) {
     datafile.close();
 }

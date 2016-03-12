@@ -14,14 +14,14 @@
 #define CM_GET_NTH_RESOURCE_DESCRIPTOR_OF_TYPE		'GNRD'
 
 struct cm_ioctl_data {
-	uint32				magic;
-	bus_type			bus;
-	uint64				cookie;
-	void				*config;
-	uint32				n;
-	uint32				type;
-	void				*data;
-	uint32				data_len;
+    uint32				magic;
+    bus_type			bus;
+    uint64				cookie;
+    void				*config;
+    uint32				n;
+    uint32				type;
+    void				*data;
+    uint32				data_len;
 };
 
 #define CM_DEVICE_NAME "misc/config"

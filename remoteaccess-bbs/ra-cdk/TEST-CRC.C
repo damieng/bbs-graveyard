@@ -16,15 +16,14 @@
 #include <conio.h>
 #include "racdk.h"   		/* RACDK function library */
 
-void main (int argc,char **argv)
-{
-  /* argc = number of parameters from DOS + 1 */
-  /* argv[1] is first parameter from DOS */
+void main (int argc,char **argv) {
+    /* argc = number of parameters from DOS + 1 */
+    /* argv[1] is first parameter from DOS */
 
-  puts("RACDK - Test CRC-32 routine/demonstration\n        ");
-  if (argc==2) printf("The 32-bit CRC of '%s' is 0x%lx\n",
-							  argv[1], CRC32(argv[1], strlen(argv[1])));
-	 else
-	  puts("Syntax: TESTCRC.EXE string\n");
-  while(!kbhit()) TimeSlice();
+    puts("RACDK - Test CRC-32 routine/demonstration\n        ");
+    if (argc==2) printf("The 32-bit CRC of '%s' is 0x%lx\n",
+                            argv[1], CRC32(argv[1], strlen(argv[1])));
+    else
+        puts("Syntax: TESTCRC.EXE string\n");
+    while(!kbhit()) TimeSlice();
 }
