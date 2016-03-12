@@ -1,0 +1,148 @@
+Envy 
+Technologies
+
+		  
+		       V I S U A L   T O O L S   
+			      
+			       F O R 
+		       
+		       R E M O T E A C C E S S
+
+
+
+			 O R D E R   F O R M
+			 ====================
+Notes:
+------
+Which registration	If your BBS meets any of the following criteria:
+			 1) Is profit making (not cost-recovery)
+		         -or-
+			 2) Provides services to customers of a 
+			    profit-making company
+		         -or-
+			 3) Has more than 10 nodes
+			Then you will require the Commercial/250 node licence.
+
+CompuServe members      CompuServe members may register online using         
+			the CompuServe GO SWREG facility.  The registration
+			codes for this software are:
+			   12038   Monitor/RA Non-commercial/10-node     $20
+			   12039   Monitor/RA Commercial/250-node        $40
+			These are billed directly to your CompuServe account.
+			After completing the SWREG process fill in the 
+			'Payment' and 'Details' section of this account and 
+			send to our CompuServe address listed below.  Keys 
+			can only be issued to your CompuServe address using 
+			this method.  Please note due to low demands on 
+			CompuServe we only check for CompuServe registrations 
+			twice a week.
+
+Credit card details     We currently accept Visa, Delta, Mastercard, Switch 
+		        and JCB.  To ensure that card details are not abused
+			Envy Technologies will not accept card details via 
+			Internet or CompuServe email. Please use either 
+			crash-mail, BBS upload or fax.  Alternatively you can
+			send the order form to our CompuServe or Internet
+			address without the the card details and provide us
+			with these details via a non-email method such as by 
+			using our voice line.
+
+			We are not currently charging any surcharges on credit
+			cards.  Cards are billed in GBP (UK pounds sterling) and
+			converted to your local rate by your credit card company.
+
+Cheques                 Cheques can only be accepted if they are in sterling
+			and drawn on a UK bank.
+
+Key files               Your KEYFILE is individually coded to your Sysop Name 
+			as set in RemoteAccess.  ENSURE this is correct 
+			including UPPER/LOWER CASE AND PUNCTUATION!
+			Key files are for private use and may not be given
+			our or redistributed to any third party.
+
+Clearance               Please note that we can not send out keys until 
+			payment has cleared.  This is 1 day for CompuServe
+			and credit cards and 5 working days for cheques.
+
+This form               Areas in square brackets should be filled in.  Mark 
+			items required with a 'X'.  If you wish to purchase 
+			multiple copies, please send one copy of this form 
+			for each required.  If all keys are to be sent to the 
+			same address then you need only pay one delivery 
+			charge for the entire order.
+
+Send this completed form to one of:
+	
+	Internet:   envy@guernsey.net  (No credit card details)
+	CompuServe: 100331,640         (No credit card details)
+	Fax:        +44-1481-37156
+	BBS:        +44-1481-37256
+	FidoNet:    Sysop, 2:255/78
+	Postal:     Damien Guard
+		    Envy Technologies
+		    5 Les Naftiaux
+		    St. Andrews
+		    Guernsey
+		    GY6 8XG
+		    United Kingdom
+
+[---cut here---]
+
+Registration
+------------
+[ ]  Monitor/RA non-commercial (up to 10 nodes)           12.00 GBP
+[ ]  Monitor/RA commercial     (up to 250 nodes)          24.00 GBP
+
+Delivery
+--------
+[ ]  FidoNet crash-mail (We deliver)                       1.00 GBP
+[ ]  Your BBS (We upload)                                  1.00 GBP
+[ ]  3.5" diskette (Regular mail)                          2.50 GBP
+[ ]  Internet e-mail (UUencode)                            FREE
+[ ]  FidoNet on-hold (You pick up)                         FREE
+[ ]  Our BBS (You download)                                FREE
+[ ]  CompuServe address                                    FREE
+
+Payment
+-------
+Total order value:                                          .   GBP
+
+[ ]  Cheque enclosed
+[ ]  Credit card
+	Card type:   [ ]Visa [ ]Mastercard [ ]Delta [ ]Switch [ ]JCB
+	Name on card:[________________________________]
+	Card number: [____ ____ ____ ____]
+		     (Larger number across center of the card)
+	Expiry date: [__/__]
+[ ]  CompuServe SWREG completed
+
+Details
+-------
+Compulsory      Your name:  [___________________________________]
+		Sysop name: [___________________________________]
+			    as in RACONFIG > Site Info - Ensure EXACT!
+		BBS name:   [___________________________________]
+		BBS number: [___________________________________]
+
+Please fill in the following sections depending on your preferred
+key delivery method.
+
+Postal mail:    Address:    [___________________________________]
+			    [___________________________________]
+		City:       [___________________________________]
+		Post/ZIP:   [______________]
+		Country:    [___________________________________]
+
+Internet email: Address:    [___________________________________]
+		Inform me of updates via this address? [ ] (Y/N)
+
+CompuServe:     Address:    [___________________________________]
+		Inform me of updates via this address? [ ] (Y/N)
+
+FidoNet mail:   Address:    [_:____/____]
+		Password:   [________]  (for on-hold only)
+
+BBS delivery:   User-id:    [________________________]
+		Password:   [________]
+		(Used for US to log into YOU and vice-versa depending
+		 on selected delivery option)

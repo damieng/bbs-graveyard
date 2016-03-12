@@ -1,0 +1,98 @@
+Monitor/RA - Whats New?
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Upgrade notes
+-------------
+
+v1.90 Notes
+===========
+New
+* New improved dockable toolbar.
+
+Fixes
+! Tip Of The Day now stores registry key in proper place.
+
+v1.80 Notes
+===========
+New
+* Full row select & hot-tracking of tabs if IE 3.x is installed.
+* Node usage statistics are now shown with color gradient.
+* Application respondes to min/max shortcut options.
+* VersionInfo information included.
+* New tip-of-the-day function with some tips on using Monitor/RA.
+
+Changes
+# Usage statistics are no longer scaled.
+# Compiled with Delphi 3.0.
+# Toolbar buttons are now the new IE3/Office97 style.
+
+Fixes
+! Time & date formatting now correct for Windows NT v4.0 users.
+
+
+v1.70 Notes
+===========
+New
+* You can now register your copy of Monitor/RA by credit oe debit card!
+  See the order.txt order form included in this package.
+* Dockable toolbar's position is saved along with the form position.
+
+Changes
+# MONITOR.CFG is no longer used.  Configuration is now saved in
+  the registry under \HKEY_CURRENT_USER\Software\Envy Technologies\MonitorRA
+  You will need to reconfigure when installing this release.
+# Our home page is now back at http://www.guernsey.net/~envy
+
+Fixes
+! System tray icon now allows takes on system background colour correctly.
+
+
+v1.60 Notes
+===========
+This release was available only from our support BBS or by special arrangement.
+
+New
+* Dockable positional toolbar.
+* Save-On-Exit option to save window & toolbar position every time.
+* Active nodes only option to not display nodes marked as offline.
+
+Changes
+# Install program now warns not to install on Windows 3.x.
+# Minor cosmetic changes to toolbar glyph icons.
+# Node's now have a space between number and node.
+# Envy Technologies web pages move to www.envytech.demon.co.uk.
+# F5 refresh bypasses intelligent updating to force refresh.
+# Returning from View > Options now forces a refresh.
+
+Fixes
+! Paging indicator is now a '!' on the node area and no longer a '*'
+  at the start of the user name as this interfered with user viewing.
+! System Tray indicator can now actually reach the maximum number of nodes.
+! Double-clicking tray icon now brings window to the front.
+
+
+v1.50 Notes
+===========
+New
+* New self-extracting & installing single EXE package (ZIP compatible)
+* Double click on callers/new users to view user record.
+* Testing under Windows NT v4.0.
+* Hide the form on minimize when System Tray support on.
+
+Changes
+# Better memory management - takes far less resources/RAM. 
+# Adjust pop-up menu to match main menu options better.
+# Can now read notes while they are being read by the receiver.
+# Can now import notes to send from files in use.
+# Cosmetic changes to toolbar, main form and screens for 95/NT.
+# System Tray icons replaced with better looking ones.
+# Improved list update speed.
+# System Tray will now hint the correct number of nodes in use
+   even if Monitor/RA is not registered.  (Previously also stopped at 3)
+
+Fixes
+# Access violation on exit in Windows NT v4.0 resolved.
+# Fixed potential problem with storing selected state between refreshes.
+# Fixed right-mouse-button selection problem which didn't grey menu items leading to 
+  potention access violation errors.
+# Fixed memory leak in the refreshing code.

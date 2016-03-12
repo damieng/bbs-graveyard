@@ -1,0 +1,506 @@
+User Manual
+
+
+
+	RemoteAccess Monitor for DOS
+
+	Monitoring & control for
+	RemoteAccess based BBS's
+
+
+	
+
+
+
+	Copyright (c) 1997, Envy Technologies.
+
+
+
+Contents
+
+Part 1  Introduction
+	Introduction to RA-Monitor
+	Licence agreement
+	Revision history
+	Requirements
+	Setting up RA-Monitor
+
+Part 2  Using RA-Monitor
+	The environment
+	Status window
+	Control window
+	Node Information window
+	BBS Information window
+	RAStatus
+
+Appendixes
+	Frequently asked questions
+	Contacting Envy Technologies
+	Future enhancements
+	Credits & acknowledgements
+
+
+Introduction
+
+Introduction to RA-Monitor
+
+RemoteAccess Monitor (or RA-Monitor), is a monitoring & control program for 
+the popular bulletin-board package, RemoteAccess.
+
+RA-Monitor allows you to monitor the status of your BBS, see who is logged in, 
+and what they are currently doing.  In addition, you can send online messages 
+to nodes, log them off or display detailed information about their current 
+login.  All of this functionality is provided in a full DOS windowed 
+environment allowing you to have multiple windows open with resizing & 
+movement while retaining the familiar interface of the RemoteAccess tools such 
+as RAMGR or RACONFIG.
+
+RA-Monitor is also extremely easy to setup.  It will run straight from the 
+package without configuration, reading necessary information such as display 
+settings and number of nodes.  The included configuration program can be used 
+to fine-tune settings for some features.
+
+
+Licence agreement
+
+The RA-Monitor package consists of all files contained within the distribution 
+archive.  Before running RA-Monitor, you must read and agree to the following 
+conditions. If you do not or can not agree to and accept the following 
+conditions, you are prohibited from using this package.
+
+o       RA-Monitor is copyrighted Damien Guard/Envy Technologies and may only 
+	be used in accordance with the conditions set forth in this license 
+	agreement.
+o       RA-Monitor is distributed as a FREEWARE program for this release.  
+	This means that the software may be freely distributed and used but 
+	Envy Technologies retains all copyrights on this package.  This 
+	licensing agreement does not apply to any future releases which may be
+	packaged with an alternative licensing agreement.
+o       Permission is granted to any individual or institution to use, copy, 
+	or redistribute RA-Monitor free of charge as long as the distribution 
+	package is not modified, nor sold for profit.
+o       RA-Monitor may be used free of charge in both private and commercial 
+	systems.
+o       RA-Monitor may not be licenced or sub-licenced to any third party 
+	without written permission of Envy Technologies.
+o       This licence agreement may not be modified nor supplemented without 
+	written permission of Envy Technologies.
+o       Neither Damien Guard nor Envy Technologies are obligated to provide 
+	new versions or support for existing versions of RA-Monitor.
+o       Although care has been taken to write and test a program that does 
+	what this document states, the program is provided as is, without 
+	warranty or guarantee of any kind, either expressed or implied, as to 
+	the quality or performance of this program, except that RA-Monitor 
+	will occupy disk space.
+o       Neither the author of RA-Monitor, Damien Guard, nor the publisher, 
+	Envy Technologies are responsible for any (direct or indirect) damage 
+	or costs, including, but not limited to, lost savings, lost profits 
+	and loss of data, which may result from the use or the inability to 
+	use RA-Monitor.
+o       The RA-Monitor package may not be distributed in a modified form with 
+	the exception of other archive formats.  This applies to adverts which 
+	may not be included as either a file, nor as a modification to an 
+	existing .DIZ informational file.
+o       Any BBS/distribution adverts of any kind may only be included in the 
+	archive banner.
+o       RA-Monitor may be included on shareware CD's and floppy disks 
+	providing that any charge levied is for the compilation and not 
+	expressly for RA-Monitor.
+o       If you use this program, you will constitute your agreement to this 
+	disclaimer/license.
+o       All rights reserved worldwide.
+
+In simple terms: It's free, but it is *ours*.
+
+
+Revision history
+
+v1.00   24/4/96         Minor path bug fixed
+			Added DOS generic timeslicing (should work under NT 
+			okay)
+			Minor cosmetics + documentation changes
+v1.10   14/5/96         Minor fix to correct send note and log off problems 
+			on some configurations.
+			Mixing keyboard and mouse movements syncronised.
+			UserDoes.n support included - must be in RA semaphore 
+			dir!
+v1.20   13/10/96        Incorrect year field on Node Information screen fixed.
+			More than 32768 calls negative figure fixed.
+			New DateFormat option in RAMSETUP to choose between
+			DD/MM/YY and MM/DD/YY formats.
+			RAMSETUP now asks you if you wish to save settings.
+			RASTATUS tool from the Monitor/RA Windows-95 project
+			now included to allow custom status information.
+			New installation program.
+
+v1.21   11/05/97        Corrected problems with root semaphore directories.
+
+
+Requirements
+
+To use RA-Monitor you require:
+
+o       An IBM-compatible personal computer with a 286, 386, 486 or Pentium 
+	processor.
+o       A storage device with approximately 200k free.
+o       Approximately 300kb of conventional memory.
+o       A copy of RemoteAccess 2.01, 2.02 or 2.50 Shareware, Hobby or 
+	Professional configured & working.
+o       A DOS session (either MS-DOS/PC-DOS or a VDM provided by Windows, 95, 
+	NT or IBM OS/2)
+
+A mouse with standard DOS support is highly recommended. 
+
+
+Setting up RA-Monitor
+
+Unpack or copy the RA-Monitor files contained within this package to a 
+directory on your system.  There is no need to place these files in your main 
+RA directory nor to be part of your path.
+
+Once you have copied the files, RA-Monitor can be run by typing RAMON.  This 
+will load the RA-Monitor software with it's preset defaults, described in a 
+moment.
+
+You can change these settings by using the included RAMSETUP program.  The 
+settings are:
+
+Refresh Interval (Default: 2 seconds)
+This setting determines how often RA-Monitor refreshes the screen.  On systems 
+with either a large number of nodes or a slow network, you may need to lower 
+this setting to 3-4 to ensure that RA-Monitor runs smoothly.  On systems with 
+less nodes (typically less than 20) you can change this setting to 1 second 
+to make RA-Monitor more responsive with it's status information.
+
+Node Template (Default: '\NODE*N')
+This determines where RA-Monitor can find node-specific information about your 
+BBS.  This template is appended to the main RA directory name.  These 
+directories will be the directory you "CD" into in your batch file before 
+running RA with the -N<node> parameter.  
+
+If you are not running a multi-line system and you CD into the RA directory 
+running RA without the -N<node> paramter, then you will need to ensure this 
+field is blank.
+
+The *N in this field will expand to the node number in plain decimal with no 
+padding.  e.g. The default "\NODE^N" parameter if RA was set to "C:\RA" would 
+become C:\RA\NODE1 for node 1, C:\RA\NODE255 for node 255.
+
+*N does not have to be the last two characters of this field, templates such 
+as \*NLINE would give C:\RA\1LINE for node 1 and C:\RA\255LINE for node 255.
+
+Exit Error Level (Default: 0)
+This setting tells RA-Monitor what your normal error-level is for exiting 
+RemoteAccess.  If you use the -E<level> parameter to launch RemoteAccess then 
+you should enter that error-level here.  If you do not use the -E parameter 
+with RemoteAccess then this field should be left to it's default of 0.
+
+Mouse Support (Default: FULL)
+It is recommended that you use a mouse with RA-Monitor to allow movement & 
+resizing of the windows it supports.  Unless you are having problems with 
+RA-Monitor then leave this parameter on "FULL".  "PARTIAL" will make 
+mouse-movements fake keystrokes providing only a basic interface with none of 
+the windowing control support and "NONE" will prevent any mouse functions from 
+being detected or used.
+
+UserDoes Support (Default: IGNORE)
+If you set this option to "SHOW" then RA-Monitor will display the ASCII 
+contents of the file USERDOES.n (n=node) from the RA semaphore directory on 
+the node information screen.  UserDoes files are extended "Node status" files 
+which are used by a number of utilities.  They can be created like: 
+
+echo Playing Red Dragon > C:\RA\SEMA\USERDOES.%1
+
+which you may want to put in a batch file when launching doors etc.  If you 
+have no need for this support, just select "IGNORE" (the default anyway) and 
+RA-Monitor will behave as if they do not exist.
+
+Date Format (Default: English)
+This will allow you to choose between two common date formats to be used when 
+displaying the date in the Node Information Window within RA-Monitor.  The 
+choices are English (DD/MM/YY) and American (MM/DD/YY).  We realise that other 
+countries use these formats too but have chosen these names for clarity.
+
+RA-Monitor also supports special screen handling which is automatically read 
+from the RemoteAccess configuration files.  These are:
+
+		Screen writes           Direct/BIOS
+		Colour mode             Colour/Mono
+		Snow checking           On/Off
+		Multitasker             Note: Only "AUTO", "Windows", "OS/2" 
+					and "DESQview" settings are utilised 
+					by RA-Monitor.  All other settings 
+					will disable multitasking.
+
+If you wish to change these settings then use RACONFIG.  To change for *just* 
+RA-Monitor, copy the CONFIG.RA file from RemoteAccess into your RA-Monitor 
+directory then "CD" to the RA-Monitor directory and run RACONFIG as you would 
+do for individual node settings.
+
+
+Using RA-Monitor
+
+The environment
+
+RA-Monitor uses a full text-windowing environment to allow the screen to be 
+positioned and resized to suit your requirements.  These functions require 
+full mouse support and are controlled as follows:
+
+	To move a window:       Position the cursor to the top bar of a window 
+				and drag it to the required position using the 
+				left mouse button.
+	To close a window:      Some windows have a yellow square block at the 
+				top left-hand side of the window.  Clicking 
+				this with the left mouse button will close 
+				that window.
+	To resize a window:     Clicking the bottom-right corner of a window 
+				will allow you to resize it to a more 
+				convenient size.  Simply hold down the left 
+				mouse button and the window will resize as 
+				you move the mouse.
+	To scroll a window:     If the contents of the window exceed the size 
+				of the frame in which it is contained, arrows 
+				will appear in the windows frame which allow 
+				you to scroll the viewable area over it's 
+				contents.
+
+When you load RA-Monitor, it should display a window on the screen displaying 
+the current node status of your screens.  
+
+
+Status window
+
+This will be automatically centered and auto-size to display as many of your 
+nodes as possible.  If you have more nodes than RA-Monitor can fit into the 
+display, scroll arrows will appear in the left hand side of the windows frame 
+allowing you to scroll the area.  The window will have the title "Status" in 
+the top-right corner of the frame.
+
+An simple example is shown here:
+
+RemoteAccess MONITOR 1.21                                             12:29:51
+
+  +--------------------------------------------------------------- Status +
+  |  Node  User                  BPS    Location            Status        |
+  |    1   Damien Guard              0  Black Ice HQ        Browsing      |
+  |    2   [Ready]                   0  InterMail           Ready         |
+  |    3   --- Offline ---           0                                    |
+  +-----------------------------------------------------------------------+
+
+The selection highlight can be moved with either the cursor keys, by selecting 
+with the mouse or by pressing numbers 1-9 to jump to a specific node (for the 
+first nine nodes only).  By pressing either the mouse button or return you can 
+bring up the control window, described in a moment, which can perform 
+operations on the selected node.
+
+As this tools if for use by a sysop, hidden callers are displayed in this 
+list.
+
+The fields shown on this screen are: 
+
+     Node            BBS node or line for which this information pertains to.
+     User            Name of the user currently online or may contain status 
+		     information if nobody is currently logged into this node.
+     BPS             User's login speed or BPS.  This is sometimes incorrectly 
+		     referred to as baud.
+     Location        User's location, or may contain the words 'RemoteAccess' 
+		     if RA is currently waiting without a user.
+     Status          Current activity of the user.  May contain standard 
+		     entries such as Browsing or File transfer, but can also 
+		     contain custom entries for doors using the *A option.
+
+
+Control window
+
+The control window will allow you to view & control your RemoteAccess system 
+in conjunction with the node information screen.  The options on this menu 
+are:
+
+      Node info       Displays detailed node information for the current node 
+		      using the Node Information window described below.
+      Send note       Sends an "Online Note" to the user much the same was as
+		      RemoteAccess's menu type xx.
+      Log off         Logs the user off BBS, exiting RemoteAccess at the error 
+		      level specified in RAMSETUP.
+      BBS info        Displays some information about your BBS using the BBS 
+		      Information window described below.
+      About           Displays credits & version number for RA-Monitor.
+      Quit            Exit RA-Monitor and return to DOS.
+
+The options can be selected by either the mouse, the cursor keys & return or 
+by pressing the first letter of the option.  Note: You can press the first 
+letter of the option from the Node Information window even if the Control 
+window is not visible/open.
+
+The Node info & BBS info options toggle whether their relative window is 
+displayed allowing you to display & remove the windows from the keyboard.
+
+
+Node Information window
+
+The Node Information window displays information about the currently selected 
+node.  Note, you can display this window and still move through the Status 
+window and it will update to reflect the currently selected node in the 
+Status window.  The details are as follows:
+
+	Node number     Node for which this information pertains to.
+	User name       Name of the user currently using this node.
+	User handle     Handle of the user currently using this node.
+	Location        Location of the user currently using this node.
+	BPS             Connect BPS speed of the caller using this node.
+			Note: 0 indicates this call is a LOCAL login.
+	User call       Number of times this user has logged into your BBS.
+	Currently       User's current activity on this node.
+	Hidden user     Whether this user is currently hidden to other 
+			callers.
+	Paged sysop     Whether this user has paged the sysop using this 
+			session.
+	No disturb      Whether this user has the "do not disturb" flag set 
+			to ignore online notes from other users.
+	Exit pending    Whether this node has already been sent a "Log off" 
+			code from RA-Monitor and is waiting for RemoteAccess 
+			to process it.
+	Note pending    Whether this node has been sent a "Online Note" either 
+			via RA-Monitor or RemoteAccess that has not yet been 
+			read.
+	Logged in at    Time and date this user logged in.
+	Previous call   Time and date of the most recent logoff of this node.
+			Do not confuse with the users previous call.
+	User does       If you have UserDoes support enabled in RAMSETUP and 
+			there is a valid UserDoes status information for this 
+			node, the first 80 characters will be displayed here.
+
+NOTE:   Both exit & notes pending will normally occur when the user is in a 
+door as RemoteAccess is unable to process them until control has returned to 
+RemoteAccess itself.   
+
+
+BBS Information window
+
+The BBS Information window displays some simple information about your BBS.  
+This information is:
+
+	Total nodes     Number of nodes that RA-Monitor has detected.
+	Total calls     Total number of calls your BBS has received in total.
+	Calls today     Number of calls your BBS has received today.
+	Last caller     Name of the last caller to log off your system.
+
+
+RAStatus
+RAStatus is an additional DOS based tool included in this package which allows 
+you to modify the RemoteAccess status information which is shown both on 
+RA-Monitor and the "Who's Online" function in RemoteAccess.
+
+The syntax for this tool is:    RASTATUS /N<node> [options]
+				Where <node> is the node number you wish to 
+				modify.
+
+The options are:    /U<user name>           Change 'user name' to this text.
+		    /H<handle>              Change 'user handle' to this text.
+		    /B<bps>                 Change 'BPS rate' to this speed.
+					    (Use 0 for local, no commas!)
+		    /L<location>            Change 'users location' to this 
+					    text.
+		    /S<status>              Change 'currently doing' to this 
+					    text.
+					    (RemoteAccess limitation of 10 
+					    characters)
+		    /C<call>                Change 'times-called' to this 
+					    value.
+		    /D<text>                Write this text to this nodes 
+					    userdoes.
+		    /X                      Clear this node's information.
+
+Due to the way DOS works, if you require a name/location etc to have a space 
+in it, please use the underscore character '_' - RAStatus will convert this 
+to spaces as it updates the status information.
+
+Please note that changing these options only affects the online status lists 
+and does not modify the users record (for example specifying 
+		RASTATUS /N1 /LNot_here 
+will only adjust the online list - the user's own Location will remain 
+whatever it is set to in RemoteAccess' user database).
+
+
+Appendixes
+
+Frequently asked questions
+
+Q:      The settings in RemoteAccess for screen & multitasking settings are 
+	correct for my BBS but I use RA-Monitor on a different machine.  How 
+	can I change them?
+A:      Copy CONFIG.RA from your RA system directory to RA-Monitor's 
+	directory.  CD into RA-Monitor's directory and run RACONFIG.  Adjust 
+	the settings in this copy of CONFIG.RA.  RA-Monitor will first use the 
+	current directory's CONFIG.RA before searching the RA main directory.
+
+Q:      RA-Monitor hangs on my system.
+A:      Try disabling mouse support in RAMSETUP.  If this fails use the above 
+	answer to create a CONFIG.RA in RA-Monitor's directory and try setting 
+	the multitasker to AT BIOS.  If neither of these solutions help, fill 
+	in PROBLEM.DOC enclosed in this package and send it to Envy 
+	Technologies (contact details in the following section).
+
+Q:      RA-Monitor has several "--- Offline ---" lines at the end of the 
+	status display list.
+A:      Delete your USERON.BBS file from RemoteAccess and log-in to the 
+	highest node number your BBS has.  This will rebuild the USERON.BBS 
+	file to the correct size so that RA-Monitor can calculate how many 
+	nodes your system is capable of running.
+
+
+Contacting Envy Technologies
+
+There are several ways of contacting Envy Technologies.  They are:
+
+	FidoNet:                2:255/78 or 2:255/119 (Damien Guard)
+	BBS (UK):               (01481) 37156/37256   (33k6)
+	BBS (Internat.):        +44-1481-37156/37256  (33k6)
+	Internet:               envy@guernsey.net
+
+To recieve the latest versions of Envy Technologies releases:
+
+	FidoNet:        FREQ from 2:255/89 or 2:255/119
+			RAMON for latest version of RA-Monitor
+			ENVY  for list of releases to dates + future releases
+	BBS:            Log onto our BBS (numbers listed above) as user GUEST.
+			Go into the file menu, select group Official 
+			Distribution then file area [Distrib] Envy 
+			Technologies.
+	Internet:       http://www.guernsey.net/~envy
+
+
+Future enhancements
+
+Other projects are currently taking priority over RA-Monitor and thefore no 
+next release has currently been set.
+
+
+Credits & acknowledgements
+
+Thanks to Gary Smith at FlightPath for his invaluable RA support, Lake View 
+Software for supplying the source code to their DOS windowing libraries, 
+Steve Streeting (also part of Envy Technologies) for his help in answering 
+many a question on 'C', to Steve Lajoie for providing more WWW/FTP space for 
+us at GuernseyNet and to Mike Elhert at PC Micro for his information on 
+UserDoes support.
+
+Original interface style by JoHo - author of FrontDoor.
+
+This product was developed using another Envy Technologies product, the 
+"RemoteAccess 'C' Developer Toolkit" which contains the RA 2.50 structs in 
+'C' along with Pascal<>C string copy & conversion macros, CRC-32 routines, 
+examples and information.  This package can be FREQ'ed from our FidoNet sites 
+using the magic name RACDK, or found at our WWW site.
+
+Development tools:      Borland C++ v4.52 / v3.10
+			RemoteAccess 'C' Developer Toolkit v0.3
+			LVS Windowing Classes (custom version)
+Software used:          Windows NT v4.0, RemoteAccess 2.02/sw, RemoteAccess 
+			2.02/Pro, RemoteAccess 2.50, Windows Write, X00, 
+			DoorWay 2.2, 4-DOS v5.5.
+
+Thank-you for using RA-Monitor,
+
+[)amien
+Damien Guard - Envy Technologies - Sunday 5th May, 1997.
