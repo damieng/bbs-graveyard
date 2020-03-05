@@ -1,0 +1,404 @@
+
+Filename:  RA-FAQ02.TXT
+Title:     The Unofficial RemoteAccess FAQ
+Revision:  002   (June 18, 1995)
+Author:    Damien Guard  <envy@guernsey.net>
+
+
+       %%%%%%%%%    %%%%%%%%          %%%%%%%%%%  %%%%%%%%    %%%%%%%%
+       xxxx  xxxx  xxxx  xxxx         xxxx       xxxx  xxxx  xxxx  xxxx
+       *********   **********  *****  *******    **********  ****  ****
+       xxxx  xxxx  xxxx  xxxx         xxxx       xxxx  xxxx  xxxx xx xx
+       %%%%  %%%%  %%%%  %%%%         %%%%       %%%%  %%%%   %%%%%% %%
+
+
+
+ 1.  About this document
+     1.1   What is this document?
+     1.2   Where can I get the latest copy?
+     1.3   Contacting the author
+
+ 2.  About RemoteAccess
+     2.1   What is RemoteAccess?
+     2.2   Where can I get the latest copy of RemoteAccess?
+     2.3   Where can I register RemoteAccess?
+     2.4   What are the various flavours of RemoteAccess?
+     2.5   How do I get a beta copy of RemoteAccess?
+
+ 3.  Setting up RemoteAccess
+     3.1   What init string do I need for my modem?
+     3.2   What is a FOSSIL driver?
+     3.3   Why does RemoteAccess get the bps rate wrong?
+     3.4   How do I setup doors?
+     3.5   Why do my JAM mail areas not work?
+
+ 4.  Advanced RemoteAccess features
+     4.1   Why does the conferencing not work?
+     4.2   What high-speed serial cards are available?
+     4.3   How can I multitask my RemoteAccess BBS?
+
+ A.  Appendix A
+     
+---
+
+1.  About this document
+=======================
+
+     1.1  What is this document?
+     ---------------------------
+     This document is a frequently asked questions and answers help file
+     for the popular bulletin board software program RemoteAccess produced
+     by Wantree Development/Andrew Milner.
+
+     After spending a long time in various conferences about RemoteAccess
+     I kept seeing the same questions come up time and time again and
+     wondered why I hadn't seen a RemoteAccess FAQ.  So here it is!
+
+     Note that setting up of extra software and protocols is not covered in
+     this document as they can be found in the excellent Q&A4RAnn package
+     available from many BBS's.
+
+     This is only the first release so there's plenty to be added and no
+     doubt a few mistakes, all constructive criticism, comments and ideas
+     are appreaciated!  See '1.3  Contacting the author' for more information.
+
+
+     1.2  Where can I get the latest copy?
+     -------------------------------------
+     At the moment I'm not aware of any site on the net I can post this to
+     when new versions come out, but if you can offer this facility, please
+     contact the author.
+
+     In the meantime you can get it:
+
+     FidoNet FREQ:      2:255/78  (28,800bps v.34)  name: RA-FAQ
+                        2:255/119 (28,800bos v.FC)  name: RA-FAQ
+     BBS download:      +44/0 1481 727140/727141    login: GUEST/GUEST
+
+
+     1.3  Contacting the author
+     --------------------------
+     If you want to send any feedback to the author of this document, you
+     can do so by e-mailing the following:
+
+     Internet:  envy@guernsey.net
+     FidoNet:   damien guard 2:255/78
+     MSN:       damien
+     Fax:       +44/0 1481 727140
+     Data:      +44/0 1481 727140/727141
+     
+---
+
+2.  About RemoteAccess
+======================
+
+     2.1  What is RemoteAccess?
+     --------------------------
+     RemoteAccess is an electronic bulletin board system capable of
+     maintaining and handling extensive file and messaging services
+     thru modems and ISDN adapters.  It is available in both shareware
+     and comercial packaged versions from 2 node to 255 node versions.
+
+
+     2.2   Where can I get the latest copy of RemoteAccess?
+     ------------------------------------------------------
+     Most good BBS's carry a copy of RemoteAccess, but for up to date
+     versions, try the following:
+
+     Internet:       ra.fileshop.com
+                     www.uti.com
+     FidoNet:        2:254/99           FREQ: RA
+
+     The Internet site also offer a demonstration copy of RemoteAccess Pro.
+     The required files are RADEMO.ARJ and RADEMO.SER (the serial number).
+
+
+     2.3   Where can I register RemoteAccess?
+     ----------------------------------------
+     United Kingdom:    Gary Smith / Flightpath BBS
+                        You can also purchase the Hobbyist and Pro versions
+                        of RemoteAccess from here.
+
+
+     2.4   What are the various flavours of RemoteAccess?
+     ----------------------------------------------------
+     2.02sw        Standard shareware release, unregistered.
+     2.02+         Same as 2.02sw but registered with a valid ra.key file.
+     2.02 Hobby 5  Hobbyist 5 node version.
+     2.02 Pro 2    Professional 2 node version.
+     2.02 Pro 10   Professional 10 node version.
+     2.02 Pro 255  Professional 255 node version.
+     2.50b?        New beta version of RemoteAccess not available to the
+                   public.
+
+
+     2.5   How do I get a beta copy of RemoteAccess?
+     -----------------------------------------------
+     RemoteAccess has what is called a 'Closed' beta team as opposed to a
+     'Public' beta team.  This means the beta testers are a select few chosen
+     by Wantree Development/Andrew Milner.
+
+     It has been known for Gamma versions (The in-between versions after beta
+     but before the full release) to be released to the public.  
+
+
+---
+
+3.  Setting up RemoteAccess
+===========================
+
+     3.1   What init string do I need for my modem?
+     ----------------------------------------------
+     This is not an easy question to answer as it depends on the modem and
+     what options you want to set.  A few guidelines follow with the Hayes
+     standard command for this option (check your modem's manual if you
+     are unsure if it is fully Hayes compatible).
+
+        Option                          Hayes command
+        ---------------------------------------------
+        Auto-answer off                 ATS0=0
+        Allow lower speed connections   ATN1
+        Return result codes             ATQ0
+        Result codes as words           ATV1
+        Full result codes               ATX4
+        Reset on DTR transition         AT&D3
+        Enable RTS/CTS flow             AT&K3
+        Error control mode              AT&Q5
+        CTS tracks RTS online           AT&R0
+        Display modem-modem speed       ATW2
+ 
+     If you put more than one command together you only need to specify one
+     AT command at the start of the initialisation string.  You may also want
+     to include the sequence v^~ at the start.  This will cause the modem to
+     disconnect from the remote system if it has failed to hang up.
+
+     I hope to include a list of init string in the future for this section,
+     so please send them in! (Only if it works - don't forget to mention the
+     make and model of modem too)
+
+
+     3.2   What is a FOSSIL driver?
+     ------------------------------
+     FOSSIL is an acronym for "Fido/Opus/SEAdog Standard Interface Layer". 
+
+     A FOSSIL driver is a software layer between various comms & BBS software
+     and your serial port.  By keeping the software to using a FOSSIL you
+     can in theory have any sort of non-standard serial device such as a
+     high speed DigiBoard or Hayes ESP card and only need a FOSSIL driver
+     that supports that card for all of your software to work.
+
+     You must load your FOSSIL driver before loading RemoteAccess.  It is also
+     recommended that you set any doors to use the FOSSIL driver if possible
+     to minimize comms problems caused when shelling to external programs.
+
+     It is highly recommended you use the FOSSIL's LOCK option if it has one
+     to ensure that the software does not get confused.  For 14,400 modems
+     it is suggested you lock at 19,200 or 38,400.  For 28,800 modems you
+     can lock at 38,400 or above, but bear in mind that speeds above this
+     (57,600 and 115,200) do not conform to the original FOSSIL 5 specification
+     and may require doors to be set to 'Extended FOSSIL' (or they may not
+     function correctly at all).
+
+     There are a few well known and reliable FOSSIL drivers, with versions
+     for both OS/2 and MS-DOS.  There are no known ones for Windows 95 at the
+     moment although both X00 and BNU work with reasonable sucess under a
+     single node environment.
+
+     Title:    X00
+     System:   MS-DOS
+     Author:   Ray Gwinn
+     Latest:   1.50 (1.53 public beta)
+     FTP:      ftp.cdrom.com /pub/simtel/msdos/fossil/x00v150.zip
+     Locking:  Use the XU LOCK command detailed in the documentation.
+     Comments: Avoid versions 2.xx as there are a number of hacked versions
+               floating around.
+
+     Title:    BNU
+     System:   MS-DOS
+     Author:   David Nugent
+     Latest:   1.70
+     FTP:      ftp.cdrom.com /pub/simtel/msdos/fossil/bnu170.zip
+     FidoNet:  3:632/348.0
+     Locking:  Specify as part of ports parameters in CONFIG.SYS
+     Comments: Awkward setup for non-standard IRQ's.
+
+     Title:    SIO/VX00
+     System:   OS/2
+     Author:   Ray Gwinn
+     Latest:   1.50
+     FTP:      vmbbs.gwinn.com (199.248.240.2)
+     Internet: ray@gwinn.com
+     FidoNet:  1:265/104
+     CServe:   71154,575
+     Voice:    1-703-494-4673
+     FAX:      1-703-494-0595
+     BBS:      1-703-494-0098 
+     Locking:  Although it does not appear to be documented, you can lock
+               the port in the OS/2 CONFIG.SYS by placing a : followed by
+               the lock BPS rate after the COM port setting for the SIO.SYS
+               line.  eg.  DEVICE=C:\SIO\SIO.SYS (COM2:57600)
+     Comments: This excellent package replaces OS/2's entire serial support
+               with a much better set of drivers including a virtual FOSSIL
+               driver.  The unregistered version supports up to 4 serial
+               ports.
+
+     Title:    VFOSSIL
+     Sytem:    OS/2
+     Author:   Joakim B. Hernberg
+     Latest:   0.54beta ?
+     Internet: jbh@fido.lu
+     BBS:      +352 878 224 (2:270/3@fidonet)
+     FAX:      +352 878 239
+     Locking:  Available.
+     Comments: Supports up to 8 serial ports.
+
+
+     3.3   Why does RemoteAccess get the bps rate wrong?
+     ---------------------------------------------------
+     If you are running RemoteAccess with a mailer, ensure your batch file
+     and error levels are set correctly as this can cause all sorts of strange
+     problems.
+
+     The more common error though (on both standalone and mailer modes),
+     is that the modem is setup to report DTE (computer-to-modem) speed.
+     This is easy to spot if all of your callers happen to call in at the
+     bps rate you have locked your FOSSIL driver to (ie. 19200).
+
+     To correct this, check your modem's manual and set the option to report
+     DCE (modem-to-modem) speed.  If your modem is fully Hayes compatible
+     then the command ATW2 should set this option.
+     
+
+     3.4   How do I setup doors?
+     ---------------------------
+     RemoteAccess supports a number of dropfile formats.  They are:
+
+        DOOR.SYS        Enhanced 52-line version
+                        This is sometimes refered to as Wildcat 3 by doors.
+
+        DORINFO1.DEF    This is sometimes refered to as QuickBBS by doors.
+                        Note that RemoteAccess will always generate
+                        a DORINFO1.DEF in the node directory and not
+                        DORINFOn.DEF where n is the node number.  If the
+                        door expects the DORINFOn.DEF style and you are
+                        running less than 10 nodes, put the following
+                        at the start of the batch file for the door:-
+ 
+                        copy c:\ra\%1\dorinfo1.def c:\door\dorinfo%1.def
+
+                        Ensure that the first parameter is *N in the
+                        menu option's OPTDATA field.
+
+        EXITINFO.BBS    This is not supported by most door games but a lot
+                        of RemoteAccess specific utilities will use it.
+                        Details of it's structure are in the Pascal file
+                        structures that come with RemoteAccess.
+
+     To run a batch file from menu option, set the OPTDATA field as follows:-
+
+        *C /C batch.bat *M
+
+     The *C and /C will inform RA to load the command interpretor and to return
+     once the batch file (batch.bat in the above example) has completed.
+
+
+     3.5   Why do my JAM mail areas not work?
+     ----------------------------------------
+     In order for the JAM mail format to work, SHARE.EXE (or it's equivalent
+     VSHARE.386 under Windows for Workgroups) must be loaded.
+
+     SHARE is a program which comes with Microsoft's MS-DOS, Novell/Digital
+     Research's DR-DOS, IBM's PC-DOS and Novell's DOS 7.  It is not required
+     under OS/2, Windows 95 or Windows NT.
+
+     This program can be loaded as a DEVICE= line in your config.sys or
+     as a program in your AUTOEXEC.BAT.  (Loading in your CONFIG.SYS saves
+     256 bytes of memory).
+
+     Examples:          DEVICE=C:\DOS\SHARE.EXE /F:5100 /L:500  (CONFIG.SYS)
+                        SHARE /F:5100 /L:500                    (AUTOEXEC.BAT)
+
+
+---
+
+4.  Advanced RemoteAccess features
+==================================
+
+     4.1   Why does the conferencing not work?
+     -----------------------------------------
+     The shareware version and registered shareware version of RemoteAccess do
+     not include the multi-line conferencing option despite the references which
+     can be found in the documentation for these versions.
+
+     The multi-line conferencing is available in the Hobbyist 5-node and
+     Professional versions of RemoteAccess.
+
+
+     4.2   How can I run more than 1 node?
+     -------------------------------------
+     There are two basic ways of doing this.  The first is to network together
+     PC's and to run a node on each but this is outside the scope of this FAQ.
+
+     The second and more popular option is to multitask the machine to allow it to
+     run more than 1 DOS session simultaneously.  There are a number of multitaskers
+     on the market, each is detailed with it's good and bad points below:
+
+     Name:     DESQview
+     Producer: QuarterDeck
+     Good:     Sit's on top of existing DOS system
+               Pre-emptive multitasking.
+               Requires little in the way of RAM.
+     Bad:      Each DOS session restricted conventional memory.
+               Not as stable as it could be.
+     Comments: DESQview is quite a good little multitasker.  I used it to run my
+               BBS for a couple of months and found that it did the job quite well
+               and at a reasonable speed with 2 nodes on a 486SX/25 with 4mb RAM.
+
+     Name:     Windows 3.1/3.11
+     Producer: Microsoft
+     Good:     Lets you run Windows apps while your BBS runs.
+     Bad:      Windows comms support is terrible.
+               Can be awkward to get it up and running.
+               Runs quite slow.
+     Comments: I've not tried this myself but have heard from people that run it
+               okay although it does require some fiddling to get it working.
+
+     Name:     OS/2 Warp
+     Producer: IBM
+     Good:     Two virtual FOSSIL drivers available.
+               Can be very stable once setup.
+     Bad:      Requires quite a lot of RAM (8mb for 2 nodes)
+               Quite slow on 486sx machines with 2 nodes.
+     Comments: I still run my system under Warp as I'm often away for a few days
+               and I need to know it will be running still when I get back.  
+
+     Name:     Windows NT
+     Producer: Microsoft
+     Good:     It's solid.
+     Bad:      I've not heard of anybody managing this one!
+     Comments: It may not be possible.
+
+     Name:     Novell DOS 7
+     Producer: Novell
+     Good:     DPMI dos with a built in multitasker!
+               Peer-to-peer networking!
+     Bad:      Novell do not support background comms in the multitasker!
+
+     Name:     Windows 95
+     Producer: Microsoft
+     Good:     It's fast.
+               It lets you run Windows apps.
+     Bad:      May have problems running more than one node - people still
+               experiencing some problems.
+     Comments: I've had a single node run fine but multinode seems to cause
+               the machine to hang on the second session when loading X00/BNU
+               for a second time in a DOS Window.  Loading them before 95
+               causes 95 to seize the COM port for no reason (this may be
+               fixed in a later build?)
+
+---
+
+A.  Appendix A
+==============
+
+     
